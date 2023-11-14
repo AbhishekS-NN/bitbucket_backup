@@ -16,7 +16,7 @@ page_count=$((repository_count / 100 + 1))
 i=1
 while [ $i -le $page_count ]
 do
-    curl -s -u ${USERNAME}:${PASSWD} "https://api.bitbucket.org/2.0/repositories/${WORKSPACE_ID}?fields=values.full_name&pagelen=100&page=$i" | jq '.values[] | "\(.project.key),\(.full_name)"' >> ${BACKUP_DIR}/repos.csv
+    curl -s -u ${USERNAME}:${PASSWD} "https://api.bitbucket.org/2.0/repositories/${WORKSPACE_ID}?fields=values.full_name,values.project.key&pagelen=100&page=$i" | jq '.values[] | "\(.project.key),\(.full_name)"' >> ${BACKUP_DIR}/repos.csv
     i=$((i+1))
 done
 
