@@ -2,12 +2,12 @@ The bash script in the repository can be used to backup the repositories in a wo
 
 # SCRIPT USAGE
 - Open ```bitbucket_backup.sh``` and add values to the variables:
-  ```
-  - USERNAME : BitBucket username. If the user is an admin or have access to all the repositories, then the backup will contain all the repositories in the workspace.
-  - PASSWD : App password of the user. [App password can be created using this](https://support.atlassian.com/bitbucket-cloud/docs/create-an-app-password/). The App password should have read permission to all the repositories.
-  - WORKSPACE_ID : BitBucket workspace ID.
-  - BACKUP_DIR : Directory where the backup should be present. It can be an absolute path or relative path.
-  ```
+>  ```
+>  - USERNAME : BitBucket username. If the user is an admin or have access to all the repositories, then the backup will contain all the repositories in the workspace.
+>  - PASSWD : App password of the user. [App password can be created using this](https://support.atlassian.com/bitbucket-cloud/docs/create-an-app-password/). The App password should have read permission to all the repositories.
+>  - WORKSPACE_ID : BitBucket workspace ID.
+>  - BACKUP_DIR : Directory where the backup should be present. It can be an absolute path or relative path.
+>  ```
 - Add execute permission for the script
   ```chmod 755 bitbucket_backup.sh```
 - Execute the script
