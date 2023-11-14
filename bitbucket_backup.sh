@@ -24,7 +24,7 @@ done
 while read -r repo
 do
     project=$(echo "${repo}" | cut -d',' -f1)
-    repos_name=$(echo "${repo}" | cut -d',' -f2 | cut -d'/' -f2)
+    repo_name=$(echo "${repo}" | cut -d',' -f2 | cut -d'/' -f2)
     echo "Back-up ${repo} in project ${project}"
     directory="${BACKUP_DIR}/${WORKSPACE_ID}/${project}/${repo_name}"
     if [ -d "${directory}" ]
