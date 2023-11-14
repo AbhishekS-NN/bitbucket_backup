@@ -1,4 +1,4 @@
-The bash script in the repository can be used to backup the repositories in a workspace. This can be used by BitBucket admins to run a regular backup of all the repositories in the workspace. 
+The bash script in the repository can be used to backup the repositories in a BitBucket workspace. This can be used by BitBucket admins to run a regular backup of all the repositories in the workspace. 
 
 ## SCRIPT USAGE
 - Open ```bitbucket_backup.sh``` and add values to the variables:
