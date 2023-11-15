@@ -23,9 +23,9 @@ done
 # Backup repos
 while read -r repo
 do
-    project=$(echo "${repo}" | cut -d',' -f1)
-    repo_name=$(echo "${repo}" | cut -d',' -f2 | cut -d'/' -f2)
-    echo "Back-up ${repo} in project ${project}"
+    project=$(echo "${repo}" | cut -d',' -f1 | cut -d'"' -f2)
+    repo_name=$(echo "${repo}" | cut -d',' -f2 | cut -d'/' -f2 | cut -d'"' -f1)
+    echo "Back-up ${repo_name} in project ${project}"
     directory="${BACKUP_DIR}/${WORKSPACE_ID}/${project}/${repo_name}"
     if [ -d "${directory}" ]
     then
@@ -34,8 +34,8 @@ do
         git remote update
         cd -
     else
-        echo "Repository ${repo} backup does not exists... Cloning"
-        git clone --bare -q "https://${USERNAME}:${PASSWD}@bitbucket.org/${repo}.git" "${directory}"
+        echo "Repository ${repo_name} backup does not exists... Cloning"
+        git clone --bare -q "https://${USERNAME}:${PASSWD}@bitbucket.org/${WORKSPACE_ID}/${repo_name}.git" "${directory}"
     fi
 done < ${BACKUP_DIR}/repos.csv
 

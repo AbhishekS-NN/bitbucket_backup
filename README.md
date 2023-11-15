@@ -11,6 +11,7 @@ The bash script in the repository can be used to backup the repositories in a Bi
   ```chmod 755 bitbucket_backup.sh```
 - Execute the script
   ```./bitbucket_backup.sh```
+- The backup of the repos will be present under ```${BACKUP_DIR}/${WORKSPACE_ID}/${project_name}/${repository_name}``` directory.
 
 > [!NOTE]
 > Time for completition of the script depends on the number of repositories present in the workspace. If the number of repositories are more, it's a recommended to run the script in background.
